@@ -27,6 +27,7 @@ const navLinks = [
   { name: "Pricing", link: "#pricing" },
 ];
 
+
 const DesktopSidebarContents = ({ name }: any) => {
   return (
     <Container maxW={["full", "container.lg"]} p={0}>
@@ -61,7 +62,7 @@ const DesktopSidebarContents = ({ name }: any) => {
         <Spacer />
         <LinkBox>
           <LinkOverlay href={`https://twitter.com/thisissukh_`} isExternal>
-            <Image src="twitter.svg"></Image>
+            <Image src="the-club-logo.svg"></Image>
           </LinkOverlay>
         </LinkBox>
       </Stack>

@@ -7,14 +7,14 @@ import {
   Text,
   Image,
   VStack,
-  SimpleGrid,
+  SimpleGrid, Heading, Button,
 } from "@chakra-ui/react";
 import { FAQSection } from "./components/FAQSection";
 import { Feature } from "./components/Feature";
-import { HeroSection } from "./components/HeroSection";
 import { Layout } from "./components/Layout";
 import { PricingSection } from "./components/PricingSection";
 import { Helmet } from "react-helmet";
+import HeroSection from "./components/HeroSection";
 
 const faqs: any[] = [
   {
@@ -43,29 +43,41 @@ export interface HighlightType {
 
 const highlights: HighlightType[] = [
   {
-    icon: "✨",
-    title: "No-code",
+    icon: "✅",
+    title: "Accès garanti au club",
     description:
-      "We are No-Code friendly. There is no coding required to get started. Launchman connects with Airtable and lets you generate a new page per row. It's just that easy!",
+      "Accès garanti au club pour vous et un de vos amis, 3 de vos amis pour la carte gold",
+  },
+  {
+    icon: "📢",
+    title: "Des Shout-out",
+    description:
+      "Vous pouvez demander au DJ de faire un Shout-out pour vous pour un de vos amis ;)",
   },
   {
     icon: "🎉",
-    title: "Make Google happy",
+    title: "Boissons Offert",
     description:
-      "We render all our pages server-side; when Google's robots come to index your site, the page does not have to wait for JS to be fetched. This helps you get ranked higher.",
+        "Une boisson offerte par la maison chaque mois et une boisson gratuite le jour de votre anniversaire",
   },
   {
-    icon: "😃",
-    title: "Rapid experimenting",
+    icon: "💶",
+    title: "Vous pouvez vendre vos NFT ",
     description:
-      "You don't have to wait hours to update your hard-coded landing pages. Figure out what resonates with your customers the most and update the copy in seconds",
+      "Vous possédez votre NFT et vous pouvez l'acheter et le vendre sur les marchés publics comme (ompensea)",
   },
   {
-    icon: "🔌",
-    title: "Rapid experimenting",
+    icon: "📈",
+    title: "Investing",
     description:
-      "You don't have to wait hours to update your hard-coded landing pages. Figure out what resonates with your customers the most and update the copy in seconds",
+        "Parce que le nombre de NFT sera limité, plus il y aura de personnes rejoignant le club plus votre NFT prendra de la valeur",
   },
+  {
+    icon: "👯",
+    title: "Bitch",
+    description:
+        "2 Bitches free for every 10 drinks you buy ",
+  }
 ];
 
 interface FeatureType {
@@ -105,36 +117,75 @@ export const App = () => {
         <meta charSet="utf-8" />
         <title>Biller | Get paid faster</title>
       </Helmet>
-      <Box bg="gray.50">
+      <Box bg="gray.50" >
         <HeroSection />
-        <Container maxW="container.xl">
-          <Center p={[0, 10]}>
-            <video
-              playsInline
-              autoPlay
-              muted
-              poster="https://launchman-space.nyc3.digitaloceanspaces.com/biller-hero-2.png"
-              loop
-            >
-              <source
-                src="https://launchman-space.nyc3.digitaloceanspaces.com/biller-hero-2.webm"
-                type="video/mp4"
-              />
-            </video>
+
+        <Container maxW="container.lg" >
+          <Center p={4} >
+            <VStack>
+              <Container maxW="container.md" textAlign="center">
+                <Heading size="2xl" mb={4} color="gray.700">
+                  Rejoignez le programme de fidélité du club et devenez un client VIP
+                </Heading>
+              </Container>
+            </VStack>
           </Center>
         </Container>
 
-        <Container maxW="container.2xl" centerContent py={[20]}>
+
+
+        <Container maxW="container.md" centerContent py={28}>
+          <SimpleGrid spacingX={10} spacingY={10} minChildWidth="300px">
+            {highlights.map(({ title, description, icon }, i: number) => (
+                <Box p={4} rounded="md" key={`highlight_${i}`}>
+                  <Text fontSize="4xl">{icon}</Text>
+
+                  <Text fontWeight={500}>{title}</Text>
+
+                  <Text color="gray.500" mt={4}>
+                    {description}
+                  </Text>
+                </Box>
+            ))}
+          </SimpleGrid>
+        </Container>
+
+
+
+
+        <VStack
+          w="full"
+          id="features"
+          spacing={1}
+          py={[16, 0]}
+        >
+          {features.map(
+            ({ title, description, image }: FeatureType, i: number) => {
+              return (
+                <Feature
+                  key={`feature_${i}`}
+                  title={title}
+                  description={description}
+                  image={image}
+                  reverse={i % 2 === 1}
+                />
+              );
+            }
+          )}
+        </VStack>
+
+
+        <Container maxW="container.2xl" centerContent py={28}>
           <Text color="gray.600" fontSize="lg">
             Used by teams worldwide
           </Text>
 
           <Wrap
-            spacing={[10, 20]}
-            mt={8}
-            align="center"
-            justify="center"
-            w="full"
+              spacing={[10, 20]}
+              mt={8}
+              align="center"
+              justify="center"
+              w="full"
           >
             <WrapItem>
               <Image src="microsoft-logo.svg" alt="Microsoft logo" />
@@ -154,43 +205,6 @@ export const App = () => {
           </Wrap>
         </Container>
 
-        <VStack
-          backgroundColor="white"
-          w="full"
-          id="features"
-          spacing={16}
-          py={[16, 0]}
-        >
-          {features.map(
-            ({ title, description, image }: FeatureType, i: number) => {
-              return (
-                <Feature
-                  key={`feature_${i}`}
-                  title={title}
-                  description={description}
-                  image={image}
-                  reverse={i % 2 === 1}
-                />
-              );
-            }
-          )}
-        </VStack>
-
-        <Container maxW="container.md" centerContent py={[8, 28]}>
-          <SimpleGrid spacingX={10} spacingY={20} minChildWidth="300px">
-            {highlights.map(({ title, description, icon }, i: number) => (
-              <Box p={4} rounded="md" key={`highlight_${i}`}>
-                <Text fontSize="4xl">{icon}</Text>
-
-                <Text fontWeight={500}>{title}</Text>
-
-                <Text color="gray.500" mt={4}>
-                  {description}
-                </Text>
-              </Box>
-            ))}
-          </SimpleGrid>
-        </Container>
 
         <Container py={28} maxW="container.lg" w="full" id="pricing">
           <PricingSection />
