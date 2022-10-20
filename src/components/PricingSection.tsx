@@ -87,7 +87,7 @@ export const PricingSection: FunctionComponent<PricingSectionProps> = () => {
           onClick={() => {
             setIsBilledAnnually(true);
           }}
-          colorScheme={isBilledAnnually ? "brand" : "gray"}
+          colorScheme={isBilledAnnually ? "green" : "gray"}
         >
           Annually (-10%)
         </Button>

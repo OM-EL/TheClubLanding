@@ -7,11 +7,13 @@ import {
   Button,
   Icon,
   IconProps,
+  Box,
 } from '@chakra-ui/react';
+import { Img } from '@chakra-ui/react'
 
 export default function CallToActionWithIllustration() {
   return (
-      <Container maxW={'5xl'}>
+      <Container maxW={'5xl'} minHeight="85vh" >
         <Stack
             textAlign={'center'}
             align={'center'}
@@ -21,35 +23,28 @@ export default function CallToActionWithIllustration() {
               fontWeight={600}
               fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
               lineHeight={'110%'}>
-                Rejoignez le programme de fidélité du club et devenez un client VIP{' '}
-            <Text as={'span'} color={'orange.400'}>
+                Rejoignez le programme de fidélité de "The club" et devenez{' '}
+            <Text as={'span'} color={'teal.400'}>
                   client VIP
             </Text>
           </Heading>
           <Text color={'gray.500'} maxW={'3xl'}>
-            Never miss a meeting. Never be late for one too. Keep track of your
-            meetings and receive smart reminders in appropriate times. Read your
-            smart “Daily Agenda” every morning.
+                L'intersection entre investir, s'amuser et profiter d'une expérience VIP
           </Text>
           <Stack spacing={6} direction={'row'}>
             <Button
                 rounded={'full'}
                 px={6}
-                colorScheme={'orange'}
-                bg={'orange.400'}
-                _hover={{ bg: 'orange.500' }}>
+                colorScheme={'teal'}
+                bg={'teal.400'}
+                _hover={{ bg: 'teal.500' }}>
               Get started
             </Button>
             <Button rounded={'full'} px={6}>
               Learn more
             </Button>
           </Stack>
-          <Flex w={'full'}>
-            <Illustration
-                height={{ sm: '24rem', lg: '28rem' }}
-                mt={{ base: 12, sm: 16 }}
-            />
-          </Flex>
+              <Box width="100%" height={700} backgroundImage="PeopleDacing.png" />
         </Stack>
       </Container>
   );

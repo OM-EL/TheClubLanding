@@ -88,25 +88,46 @@ interface FeatureType {
 
 const features: FeatureType[] = [
   {
-    title: "Detailed Analytics",
+    title: "Mint your NFT",
     description:
-      "No more spending hours writing formulas in Excel to figure out how much you're making. We surface important metrics to keep your business going strong.",
+      "Once minted it will appear on your personal space in the web site and 24 hours after you can start using it Yahoo !",
     image:
-      "https://launchman-space.nyc3.digitaloceanspaces.com/chakra-ui-landing-page-feature-1.png",
+      "phone.png",
   },
   {
-    title: "Track your clients",
+    title: "Garenteed access to the Club With 3 of your freinds",
     description:
       "Know when and how your projects are going so you can stay on top of delivery dates.",
     image:
-      "https://launchman-space.nyc3.digitaloceanspaces.com/chakra-ui-landing-page-feature-2.png",
+      "security.png",
   },
   {
-    title: "Manage projects",
+    title: "Drinks on the house",
     description:
-      "You don't have to hunt your email inbox to find that one conversation. Every task, project, and client information is just a click away.",
+      "Free drink on the house Every month + One more free drink on your birthday 🎉💐 ",
     image:
-      "https://launchman-space.nyc3.digitaloceanspaces.com/chakra-ui-landing-page-feature-3.png",
+      "glass.png",
+  },
+  {
+    title: "Shout out as surprise to your frineds ",
+    description:
+        "Ask the DJ to give you a shout out to one of your freinds, or choose next song ",
+    image:
+        "dj.png",
+  },
+  {
+    title: "Sell your NFT's at any moment  ",
+    description:
+        "You can sell your NFT at any moment , with a fixed price or with bedding system",
+    image:
+        "market.png",
+  },
+  {
+    title: " Limited Suplly + Increased demand ",
+    description:
+        "there is a fixed number of NFT, so the more the club becomes populare the higher the price will get ",
+    image:
+        "value.png",
   },
 ];
 
@@ -132,8 +153,6 @@ export const App = () => {
           </Center>
         </Container>
 
-
-
         <Container maxW="container.md" centerContent py={28}>
           <SimpleGrid spacingX={10} spacingY={10} minChildWidth="300px">
             {highlights.map(({ title, description, icon }, i: number) => (
@@ -149,9 +168,6 @@ export const App = () => {
             ))}
           </SimpleGrid>
         </Container>
-
-
-
 
         <VStack
           w="full"
@@ -173,37 +189,6 @@ export const App = () => {
             }
           )}
         </VStack>
-
-
-        <Container maxW="container.2xl" centerContent py={28}>
-          <Text color="gray.600" fontSize="lg">
-            Used by teams worldwide
-          </Text>
-
-          <Wrap
-              spacing={[10, 20]}
-              mt={8}
-              align="center"
-              justify="center"
-              w="full"
-          >
-            <WrapItem>
-              <Image src="microsoft-logo.svg" alt="Microsoft logo" />
-            </WrapItem>
-
-            <WrapItem>
-              <Image src="adobe-logo.svg" alt="Adobe logo" />
-            </WrapItem>
-
-            <WrapItem>
-              <Image src="microsoft-logo.svg" alt="Microsoft logo" />
-            </WrapItem>
-
-            <WrapItem>
-              <Image src="adobe-logo.svg" alt="Adobe logo" />
-            </WrapItem>
-          </Wrap>
-        </Container>
 
 
         <Container py={28} maxW="container.lg" w="full" id="pricing">

@@ -25,7 +25,7 @@ export const Feature: FunctionComponent<FeatureProps> = ({
 }: FeatureProps) => {
   const rowDirection = reverse ? "row-reverse" : "row";
   return (
-    <Center w="full" minH={[null, "50vh"]}>
+    <Center w="full" minH={[null, "20vh"]}>
       <Container maxW="container.xl" rounded="lg">
         <Stack
           spacing={[4, 16]}
